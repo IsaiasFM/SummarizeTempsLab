@@ -7,7 +7,19 @@ namespace SummarizeTempsLab
     {
         static void Main(string[] args)
         {
-            // temperature data is in temps.txt
+            string FileName;
+
+            FileName = Console.ReadLine();
+
+            if (File.Exists(FileName))
+            {
+
+            }
+
+            else
+            {
+                Console.WriteLine("File does not exist.")
+            }
         }
     }
 }
