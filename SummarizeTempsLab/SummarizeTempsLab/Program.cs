@@ -13,12 +13,21 @@ namespace SummarizeTempsLab
 
             if (File.Exists(FileName))
             {
+                int UserInput;
 
+                Console.WriteLine("File exists.");
+                Console.WriteLine("Please enter a temperature threshold.");
+
+                UserInput = int.Parse(Console.ReadLine());
+                using (StreamReader.sr = File.OpenRead(FileName))
+                {
+
+                }
             }
 
             else
             {
-                Console.WriteLine("File does not exist.")
+                Console.WriteLine("File does not exist.");
             }
         }
     }
