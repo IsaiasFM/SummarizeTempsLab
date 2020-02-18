@@ -19,7 +19,7 @@ namespace SummarizeTempsLab
                 Console.WriteLine("Please enter a temperature threshold.");
 
                 UserInput = int.Parse(Console.ReadLine());
-                using (StreamReader.sr = File.OpenRead(FileName))
+                using (StreamReader sr = File.OpenText(FileName))
                 {
 
                 }
