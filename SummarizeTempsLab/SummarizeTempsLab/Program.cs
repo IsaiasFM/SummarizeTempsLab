@@ -17,6 +17,12 @@ namespace SummarizeTempsLab
             {
                 int TempInput;
                 int UserChoice = 1;
+                int Temp;
+                int SumTemps = 0;
+                int TempCount = 0;
+                int TempAbove = 0;
+                int TempBelow = 0;
+                int AverageTemp;
 
                 Console.WriteLine("File exists.");
 
@@ -29,12 +35,7 @@ namespace SummarizeTempsLab
                     using (StreamReader sr = File.OpenText(FileName))
                     {
                         string line = sr.ReadLine();
-                        int Temp;
-                        int SumTemps = 0;
-                        int TempCount = 0;
-                        int TempAbove = 0;
-                        int TempBelow = 0;
-                        int AverageTemp;
+                        
 
                         while (line != null)
                         {
@@ -66,6 +67,17 @@ namespace SummarizeTempsLab
 
                     }
                     Console.WriteLine();
+
+                    using (StreamWriter sw = new StreamWriter("output.txt"))
+                    {
+                        sw.WriteLine(System.DateTime.Now.ToString());
+                        sw.WriteLine("Chosen threshold: " + TempInput);
+                        sw.WriteLine("Temperatures above: " + TempAbove);
+                        sw.WriteLine("Temperatures below: " + TempBelow);
+                        sw.WriteLine("Average tempurature: " + AverageTemp);
+                        sw.WriteLine();
+
+                    }
 
                     Console.WriteLine("Would you like to continue with a new temperature threshold in this same file?");
                     Console.WriteLine("1 - Yes");
