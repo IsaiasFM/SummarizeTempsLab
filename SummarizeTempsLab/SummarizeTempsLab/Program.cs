@@ -10,13 +10,10 @@ namespace SummarizeTempsLab
             string FileName;
             int RunFileAgain = 1;
 
-            Console.WriteLine("Please enter the file name.");
-
-            FileName = Console.ReadLine();
-
             while (RunFileAgain == 1)
             {
-
+                Console.WriteLine("Please enter the file name.");
+                FileName = Console.ReadLine();
 
                 if (File.Exists(FileName))
                 {
@@ -96,6 +93,10 @@ namespace SummarizeTempsLab
                 {
                     Console.WriteLine("File does not exist.");
                 }
+
+                Console.WriteLine("Would you like to continue with a new file? 1 - Yes, 2 - No");
+                RunFileAgain = int.Parse(Console.ReadLine());
+
             }
         }
     }
